@@ -26,3 +26,22 @@ p {
     line-height: 2rem;
     font-size: 1.2rem;
 }
+
+.services-list {
+    flex-wrap: wrap;
+    display: flex;
+}
+.service {
+    flex: 0 0 100%; /* when screen is smaller each will take up full row */
+}
+
+@media (min-width: 768px) {
+    .service {
+        flex: 0 0 50%; /* no grow or shrink, but each take up a half*/
+    }
+
+    .e-commerce {
+        flex: 0 0 100%; /* one that flowed to 2nd row will take full */
+    }
+}
+

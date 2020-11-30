@@ -32,9 +32,14 @@ h2 {
     padding: 10px;
     background-color: #E53935;
     /* Flex Grow**/ 
+    flex-grow: 1;
+    /* width: 500px; */
 }
 .flex-element:nth-child(1) {
-
+    /* flex-shrink: 3; */
+    /* flex-grow: 0;
+    flex-basis: 600px; */
+    flex: 0 0 600px; /* grow shrink basis */
 }
 
 .flex-element:nth-child(2) {

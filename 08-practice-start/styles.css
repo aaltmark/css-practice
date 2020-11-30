@@ -9,10 +9,15 @@ body {
     background-color: #03A9F4;
     padding:0 20px;
     /* Flex here*/
+    display: flex;
+    flex-direction: column; /* for phones top to bottom */
 }
 @media screen and (min-width:768px) {
     .site-name {
         /* Flex here*/
+        flex-direction: row; /* for computers/tablets left to right  */
+        justify-content: space-between; /* between site name and nav */
+        align-items: center; /* vertically */
     }
 }
 .site-name h1 {
@@ -21,11 +26,29 @@ body {
 
 nav {
     /* Flex here*/
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* because we're using direction column */
 }
+
+@media (min-width: 768px) {
+    nav {
+        flex-direction: row;
+    }
+}
+
 nav a {
     color: white; 
     font-family: 'IBM Plex Serif', serif;
     text-decoration: none;
+    margin-right: 1rem; /* separation between nav items*/
+    margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+    nav {
+        margin-bottom: 0rem;
+    }
 }
 
 .container {
@@ -46,10 +69,14 @@ h2 {
 .flex-container {
     margin-top: 20px;
     /* Flex here*/
+    display: flex;
+    flex-direction: column; /* on phone services will be top to bottom*/
 }
 @media screen and (min-width:768px) { 
     .flex-container {
        /* Flex here*/
+       flex-direction: row;
+       justify-content: space-between; /* push services to left and blog to right */
     }
 }
 
@@ -59,6 +86,8 @@ h2 {
 }
 aside {
     /* flex here*/
+    order: -1; /*sidebar blog before other elements on phone  */
+    margin-bottom: 2rem;
 }
 
 aside {
@@ -67,20 +96,28 @@ aside {
 @media screen and (min-width:768px) {
     .main-content {
         /* Flex here*/
+        flex: 0 0 calc(60% - 1rem); /* 1 rem will serve as a margin between services and blog */
     }
     aside {
         /* Flex here*/
+        order: 1; /* push to right on laptop*/
+        flex: 0 0 40%;
     }
 }
 .services {
     /* Flex here*/
+    display: flex; 
+    flex-wrap: wrap;
+    justify-content: space-between; /* gives us separation between services on comp */
 }
 .services .service {
     /* Flex here*/
+    flex: 0 0 100%; /* all services boxes on phone will take full width*/
 }
 @media screen and (min-width:768px) {
     .services .service {
         /* Flex here*/
+        flex: 0 0 calc(33.3% - 1rem); /* on computer they will take up a third with a margin */
     }
 }
 
@@ -103,6 +140,9 @@ footer {
     background-color: #8E24AA;
     margin-top: 20px;
     /* Flex here*/
+    display: flex;
+    justify-content: center; /* center horizontal*/
+    align-items: center; /* center vertical*/
 }
 footer p {
     color: white;

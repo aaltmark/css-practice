@@ -26,9 +26,18 @@ h2 {
     display:inline-flex;
     display: flex;
     border: 3px solid black;
+    width: 300px;
     /* flex-direction: column; */
 
     /*  Wrap **/
+    flex-wrap: nowrap;
+    flex-wrap: wrap;
+    flex-wrap: wrap-reverse;
+
+    /* Flex Flow */
+    flex-flow: row wrap;
+    flex-flow: column wrap;
+    flex-flow: row nowrap;
 }
 
 .flex-element {

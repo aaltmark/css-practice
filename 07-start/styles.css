@@ -25,6 +25,22 @@ h2 {
     /* display:inline-flex; */
     display: flex;
     border: 3px solid black;
+    height: 600px;
+
+    /* justify content  */
+    justify-content: flex-start; 
+    justify-content: flex-end; 
+    justify-content: center;
+    justify-content: space-around;
+    justify-content: space-between;
+
+    /* Align Items */
+    /* align-items: stretch;
+    align-items: flex-start;
+    align-items: flex-end;
+    align-items: baseline;
+    align-items: center; */
+
 }
 
 .flex-element {
@@ -33,13 +49,16 @@ h2 {
     /* Alignment **/ 
 }
 .flex-element:nth-child(1) {
+    align-self: flex-start;
 
 }
 
 .flex-element:nth-child(2) {
     background-color: #8E24AA;
+    align-self: center;
 }
 
 .flex-element:nth-child(3) {
     background-color: #3F51B5;
+    align-self: flex-end;
 }
