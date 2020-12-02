@@ -1,0 +1,237 @@
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+body {
+    margin:0;
+    background: #ff9966;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #ff5e62, #ff9966);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #ff5e62, #ff9966); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    font-family: 'IBM Plex Serif', serif;
+}
+.container {
+    background-color: white;
+    min-height: calc( 100vh - 20px );
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px 30px 10rem 30px;
+}
+
+nav {
+    background-color: #3F51B5;
+}
+nav ul {
+    list-style:none;
+    margin:0;
+    padding:0;
+}
+nav ul li {
+    padding: 20px;
+}
+nav ul li:hover {
+    background-color: #1a2770;
+}
+nav ul a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.4rem;
+}
+
+/* Simple Menu */
+.simple ul{ /* flex goes down 1 level */
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.simple ul li {
+    text-align: center;
+    margin-bottom: .5rem;
+}
+
+.simple ul li:last-of-type {
+    margin-bottom: 0;
+}
+
+@media (min-width: 768px) {
+    .simple ul {
+        flex-direction: row;
+    }
+    .simple ul li {
+        margin-bottom: 0; /* remove what we added to mobile*/
+    }
+}
+
+/* Icon Menu */
+.icons ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+@media (min-width: 480px) {
+    .icons ul li {
+        flex: 0 0 50%;
+    }
+}
+
+@media (min-width: 768px) {
+    .icons ul li {
+        flex: 0 0 25%;
+    }
+}
+
+.icons ul li {
+    flex: 0 0 100%;
+}
+
+.icons ul li a {
+    display: flex; /* flex parent  */
+    justify-content: center;
+    flex: 0 0 100%;
+}
+
+.icons .icon {
+    font-size: 2rem;
+    flex: 0 0 3rem;
+}
+
+.icons .text span {
+    font-size: .8rem;
+    display: flex; /* instead of inline so it'll be on own line*/
+    margin-top: .5rem;
+}
+
+/* Dropdown */
+.dropdown ul {
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-width: 786px) {
+    .dropdown ul {
+        flex-direction: row;
+    }
+}
+
+.dropdown ul li {
+    display: flex; /* parent for a*/
+    flex-direction: column;
+}
+
+.dropdown ul li ul {
+    display: none; /* hidden by default  */
+}
+
+.dropdown ul li:hover ul { /* when li is hovered, show the ul */
+    display: block;
+    margin-top: 1rem;
+}
+
+.dropdown ul li ul li:hover { 
+    background-color: #ff5e62;
+}
+
+@media (min-width: 768px) {
+    .dropdown ul li {
+        position: relative;
+        flex: 1 1 100%; /* so dropdown fills parent*/
+    }
+    .dropdown ul li ul {
+        display: none;
+        position: absolute;
+        top: 100%; /* so dropdown is positioned aat bottom of dropdown*/
+        left: 0;
+    }
+
+    .dropdown ul li:hover ul {
+        display: flex;
+        flex-wrap: wrap;
+        background-color: #ff5e62;
+        margin-top: 0; /* remove from mobile first */
+    }
+}
+
+/* Social menu */
+.social-menu span{
+    display: none;
+}
+
+.social-menu ul {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1 0 auto;
+    justify-content: flex-end;
+}
+
+.social-menu ul li {
+    padding: 5px 10px;
+}
+
+.social-menu a::before {
+    font-family: "Font Awesome 5 Brands";
+    font-size: 1.2rem;
+}
+/* grab logo content from font awesome */
+.social-menu a[href*='http://facebook.com']::before {
+    content: '\f39e';
+}
+.social-menu a[href*='http://twitter.com']::before {
+    content: '\f099';
+}
+.social-menu a[href*='http://youtube.com']::before {
+    content: '\f431';
+}
+.social-menu a[href*='http://instagram.com']::before {
+    content: '\f16d';
+}
+.social-menu a[href*='http://pinterest.com']::before {
+    content: '\f231';
+}
+
+/* combo menu */
+.navigation-social-dropdown {
+    background-color: #3F51B5; /* to fill in space between */
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* get icons in center*/
+    flex-wrap: wrap;
+}
+
+.navigation-social-dropdown .dropdown ul li {
+    flex: 1 0 auto;
+}
+
+.navigation-social-dropdown .dropdown {
+    flex: 0 0 100%;
+}
+
+.navigation-social-dropdown .social-menu {
+    order: -1; /* display before dropdown */
+    flex: 0 0 100%;
+}
+
+.navigation-social-dropdown .social-menu ul {
+    justify-content: center;
+}
+
+@media(min-width: 768px) {
+    .navigation-social-dropdown .dropdown ul li {
+        flex: 1 0 auto;
+    }
+    
+    .navigation-social-dropdown .dropdown {
+        flex: 1 0 auto;
+    }
+    
+    .navigation-social-dropdown .social-menu {
+        order: unset; 
+        flex: 1 0 auto;
+    }
+    
+    .navigation-social-dropdown .social-menu ul {
+        justify-content: flex-end;
+    }
+}
