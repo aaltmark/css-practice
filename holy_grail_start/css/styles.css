@@ -1,0 +1,144 @@
+/* variables  */
+:root {
+    --mainFont: 'Lora', serif; 
+    --primary: #05bae6;
+    --secondary: #db008d; 
+    --gray: #e5e5e5; 
+    --white: #ffffff; 
+    --black: #000000;
+}
+
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+/* make images responsive */
+img {
+    max-width: 100%; 
+}
+
+p {
+    line-height: 2;
+}
+
+body {
+    font-family: var(--mainFont);
+    font-size: 1.2rem;
+}
+
+.site-header {
+    padding: 2rem 0; /* top and bottom */
+    /* to center the logo child element  */
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+}
+
+/* main logo img */
+.site-header img {
+    max-width: 80%;
+}
+
+.main-navigation {
+    background-color: var(--primary);
+    padding: 1rem 0; /* top/bottom, backgrond color extends */
+}
+
+.main-navigation ul {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column; /* for phone make vertical*/
+    list-style: none; 
+}
+
+/* when on a computer  */
+@media (min-width: 768px) {
+    .main-navigation ul {
+        flex-direction: row; /*switch nav to horizontal */
+        justify-content: space-between; /* give space between links */
+    }
+}
+
+.main-navigation ul li {
+    margin-bottom: 1rem; /* space between nav links */
+    text-align: center;
+}
+
+/* when on a computer  */
+@media (min-width: 768px) {
+    .main-navigation ul li {
+        margin-bottom: 0; /* get rid of margin at bottom */
+    }
+}
+/* get rid of margin for the lowest nav link on phone*/
+.main-navigation ul li:last-of-type {
+    margin-bottom: 0; 
+}
+
+/* style the nav links */
+.main-navigation ul li a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 1.4rem;
+}
+
+/* serves as flex for main content and aside sidebar */
+.content {
+    display: flex;
+    flex-wrap: wrap; /* gets sidebar on bottom for mobile*/
+}
+
+.sidebar, 
+.main-content {
+    flex: 0 0 100%; /* take 100% of screen */
+}
+
+@media (min-width: 768px) {
+    .main-content {
+        flex: 0 0 70%;
+    }
+    .sidebar {
+        flex: 0 0 30%;
+        order: -1; /* get sidebar on left*/
+    }
+}
+
+.sidebar {
+    background-color: var(--gray);
+    padding: 2rem;
+}
+.sidebar ul {
+    list-style: none;
+}
+.sidebar ul li:not(:last-child) {
+    margin-bottom: .8rem; /* space between sidebar items */
+}
+
+/* style the sidebar links */
+.sidebar a {
+    color: var(--black);
+    text-decoration: none;
+}
+.sidebar a:hover {
+    color: var(--secondary);
+}
+
+.main-content {
+    padding: 2rem;
+}
+
+/* footer styling */
+.site-footer {
+    background-color: var(--secondary);
+    color: var(--white);
+    display: flex;
+    justify-content: center;
+}
+.site-footer p {
+    margin: 0; /* remove margin given for all p tags*/
+    padding: 1rem 0; /* top and bottom */
+}

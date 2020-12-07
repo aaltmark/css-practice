@@ -1,0 +1,286 @@
+/* standard stuff */
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    box-sizing: border-box;
+    background-color: #f2f2f2;
+    font-family: 'Libre Baskerville', serif;
+}
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+h1 {
+    color: #008fd1;
+    text-transform: uppercase;
+    font-size: 3rem;
+    max-width: 40rem; /* gives appearance of line break since text can't fit on one line there*/
+}
+h2 {
+    flex: 0 1 100%;
+    text-align: center;
+    font-size: 1.6rem;
+}
+h3 {
+    margin:0;
+    font-weight: 700;
+
+}
+img {
+    max-width: 100%;
+}
+/* Header */
+.header {
+    position: relative; /* important for navbar reference*/
+}
+.hero {
+    background-image: url(../img/hero.jpg);
+    background-position: center center;
+    /* cover the whole header */
+    background-size: cover;
+    height: 100vh; 
+
+    background-attachment: fixed; /* gives us cool scrolling effect*/
+
+    /* container for navbar and welcome to travel blog header */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.navbar {
+    background-color: #008fd1;
+    padding: 1rem 0; /* top and bottom*/
+
+    /* positioning relative to header */
+    position: absolute;
+    top: 1rem; /* start with a little gap*/
+    width: 100%;
+}
+
+/* parent flex container for logo and the nav */
+.header-container {
+    display: flex;
+    flex-direction: column; /* mobile nav links will be below*/
+    align-items: center; /* centers logo and nav*/
+}
+
+/* for comp change logo and nav to left / right side */
+@media (min-width: 768px) {
+    .header-container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+.main-navigation {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem; /* separate logo and nav*/
+}
+
+/* flip to horizontal for comp */
+@media (min-width: 768px) {
+    .main-navigation {
+        flex: 0 0 25rem; /* setting baseline width*/
+        justify-content: space-between;
+        flex-direction: row;
+        margin-top: 0; /* remove mobile first styling*/
+    }
+}
+
+.main-navigation a {
+    color: white;
+    font-size: 1.4rem;
+    text-decoration: none; /* remove underline */
+    text-align: center;
+}
+
+.content {
+    background-color: white;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+
+}
+.content {
+    padding: 1rem;
+    text-align: center;
+}
+.content h3 {
+    text-align: center;
+    font-size: .9rem;
+    line-height: 1.4rem;
+}
+
+.content span {
+    color:#db008d;
+}
+.button {
+    background-color: #008fd1;
+    color: white;
+    padding: .6rem 2rem;
+    margin-top: 1rem;
+    display: inline-block;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+@media screen and (min-width:480px) {
+    .main-content {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    .entry {
+        flex: 0 1 calc(50% - 1rem);
+
+    }
+}
+
+@media screen and (min-width:768px) {
+    .entry {
+        flex: 0 1 calc(33% - 1rem);
+    }
+}
+
+/* Categories */
+.categories ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; /* wrap so you can get 2 rows of 2*/
+}
+.categories ul li {
+    flex: 0 0 50%; /*2 items per row taking up half  */
+    padding: 2rem;
+}
+/* for comp make 4 side by side */
+@media (min-width: 768px) {
+    .categories ul li {
+        flex: 0 0 25%; /* 4 elements side by side  */
+    }
+}
+
+/* style each with a diff color  */
+.categories ul li:nth-child(1) {
+    background-color: #008fd1;
+}
+.categories ul li:nth-child(2) {
+    background-color: #db008d;
+}
+.categories ul li:nth-child(3) {
+    background-color: #9800d1;
+}
+.categories ul li:nth-child(4) {
+    background-color: #eca300;
+}
+
+.categories ul li a {
+    color: white;
+    text-decoration: none;
+
+    /* container for icon and name - get icon on top and name on bottom */
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+}
+.categories ul li a i {
+    font-size: 3rem;
+    margin-bottom: 1rem; /* spce between icon and name*/
+}
+
+/* footer */
+.footer {
+    background-color: #008fd1;
+    padding-top: 1rem;
+    color: white;
+}
+.footer h2 {
+    text-transform: uppercase;
+}
+.footer p {
+    line-height: 2;
+}
+
+@media (min-width: 768px) {
+    .footer .container {
+        display: flex;
+        justify-content: space-between;
+    }
+    /* about us, latest entries and follow us */
+    .footer .box {
+        flex: 0 0 calc(33.33% - 1rem); /* will each take up a third + space between them*/
+    }
+}
+
+/* latest entries */
+.footer ul {
+    list-style: none;
+    padding: 0;
+}
+.footer ul li {
+    margin-bottom: 1rem; /* space between each entry*/
+}
+.footer ul li a {
+    color: white;
+    text-decoration: none; /* no underline*/
+}
+.footer ul li a:hover {
+    text-decoration: underline; /* bring it back when hovered*/
+}
+
+/* social nav in footer. container for each one*/
+.social-nav {
+    display: flex; 
+    justify-content: center;
+}
+
+/* on computer align on the right instead of center */
+@media (min-width:768px) {
+    .social-nav {
+        justify-content: flex-end;
+    }
+}
+
+.social-nav span {
+    display: none; /* don't show names*/
+}
+.social-nav a {
+    margin-right: 1rem; /* sPACE BETWEEN ICONS*/
+    text-decoration: none; /* get rid of underline*/
+}
+/* to display the icons not names */
+.social-nav a::before {
+    font-family: "Font Awesome 5 Brands";
+    color: white;
+    font-size: 2rem;
+}
+.social-nav a[href*='facebook.com']::before {
+    content: "\f39e";
+}
+.social-nav a[href*='twitter.com']::before {
+    content: "\f099";
+}
+.social-nav a[href*='youtube.com']::before {
+    content: "\f431";
+}
+.social-nav a[href*='instagram.com']::before {
+    content: "\f16d";
+}
+.social-nav a[href*='pinterest.com']::before {
+    content: "\f231";
+}
+
+/* copyright */
+.copyright {
+    background-color: #004d70;
+    text-align: center;
+    margin: 3rem 0 0 0; /* by default p have margin. we only want space on top */
+    padding: 1rem 0; /* top and bottom */
+}
