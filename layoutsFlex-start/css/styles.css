@@ -1,0 +1,122 @@
+html {
+    box-sizing: border-box;
+    min-height: 100%;
+}
+*, *:before, *:after {
+box-sizing: inherit;
+}
+body {
+    min-height: 100%;
+    font-family: 'Montserrat', sans-serif;
+    background-image: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);
+}
+h2 {
+    text-align: center;
+}
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 2rem;
+}
+
+/* media-object */
+.comment-container {
+    display: flex;
+    align-items: flex-start;
+}
+
+.avatar {
+    margin-right: 1rem;
+}
+.second-level {
+    background-color: #e1e1e1;
+    padding: 1rem;
+}
+
+/* footer */
+.page {
+    max-width: 800px;
+    margin: 0 auto;
+
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.page > * {
+    padding: 1rem;
+} 
+
+.page .heading{
+    background-color: #cddc39;
+}
+
+.page .main-content {
+    flex: 1;
+    background-color: #b3dfb8;
+}
+
+.page .footer {
+    background-color: #212121;
+    color: white;
+}
+
+/* positions */
+.positions {
+    min-height: 100vh;
+    background-image: url(../img/burguer.jpg);
+    background-size: cover;
+    position: center center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.positions div {
+    flex: 0 0 calc(33.3% - 3rem);
+}
+
+.top {
+    align-self: flex-start;
+    margin-top: 1rem;
+}
+
+.bottom {
+    align-self: flex-end;
+    margin-bottom: 1rem;
+}
+
+.positions .offer {
+    background-color: #e0ab10;
+    padding: 1rem;
+    font-size: 1.4rem;
+    text-align: center;
+}
+.positions .offer span {
+    display: block;
+    font-size: 3rem;
+}
+
+.positions .main-content {
+    color: white;
+    text-align: center;
+
+}
+.positions .main-content h1 {
+    color: #e0ab10;
+    margin: 0;
+    text-transform: uppercase;
+}
+.positions .main-content p {
+    margin: 0;
+}
+.positions .main-content .location {
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+
+
+

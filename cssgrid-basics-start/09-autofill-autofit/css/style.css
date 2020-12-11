@@ -1,0 +1,34 @@
+
+h2 {
+    margin: 0;
+}
+.services {
+    border: 3px solid black;
+    height: 300px;
+    display:grid;
+}
+
+.service {
+    color: white;
+    text-align: center;
+}
+
+.service-1 {
+    background-color: darkviolet;
+}
+
+.service-2 {
+    background-color: rgb(8, 77, 8);
+}
+.service-3 {
+    background-color: teal;
+}
+.service-4 {
+    background-color: cornflowerblue;
+}
+.service-5 {
+    background-color: crimson;
+}
+.service-6 {
+    background-color: darkmagenta;
+}

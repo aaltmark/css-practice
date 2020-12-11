@@ -1,0 +1,31 @@
+
+h2 {
+    margin: 0;
+}
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+.players {
+    border: 3px solid black;
+    height: 20rem;
+    grid: 50% 50% / 33.3% 33.3% 33.3%;
+    grid-auto-flow: row;
+}
+
+
+.player {
+    color: white;
+    text-align: center;
+}
+
+.player-1 {
+    background-color: rgba(255, 131, 131, 0.589);
+}
+
+.player-2 {
+    background-color: rgba(179, 255, 179, 0.514);
+}
+.player-3 {
+    background-color: rgba(249, 161, 252, 0.411);
+}
